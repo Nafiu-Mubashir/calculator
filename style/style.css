@@ -24,3 +24,8 @@
     width: 45%;
     border: 5px;
 }
+@media (max-width: 700px) {
+    .card{
+        width: 80%;
+    }
+}
