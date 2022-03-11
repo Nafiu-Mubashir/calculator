@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--============== bootstrap file ==============-->
+    <link rel="stylesheet" href="bootstrap-5.1.2/dist/css/bootstrap.css">
+    <script type="text/javascript" src="bootstrap-5.1.2/dist/js/bootstrap.js"></script>
+    <!--============== font awesome file ==============-->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <!--============== css file ==============-->
+    <link rel="stylesheet" href="style/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="card bg-white m-auto mt-3 p-3">
+        <div class="card-bordy">
+            <!-- <input type="textview" name="textview" id="display" disabled class="form-control"> -->
+            <div id="displays">
+                <h4 id="display"></h4>
+                <h3 id="answer"></h3>
+            </div>
+            <div class="">
+                <div class="d-flex justify-content-between">
+                    <input type="button" class="btn btn-dark mt-2" onclick="clears()" value="c">
+                    <button class="btn btn-dark mt-2" onclick="del()">del</button>
+                    <input type="button" class="btn btn-dark mt-2" onclick="insert('%')" value="%">
+                    <input type="button" class="btn btn-dark mt-2" onclick="insert('/')" value="/">
+                </div>
+
+                <div class="d-flex justify-content-between mt-2">
+                    <input type="button" class="btn btn-dark mt-2" onclick="insert('7')"  id="numbers" value="7">
+                    <input type="button" class="btn btn-dark mt-2" onclick="insert('8')"  id="numbers" value="8">
+                    <input type="button" class="btn btn-dark mt-2" onclick="insert('9')"  id="numbers" value="9">
+                    <input type="button" class="btn btn-dark mt-2" onclick="insert('*')" value="X">
+                </div>
+                
+                <div class="d-flex justify-content-between">
+                    <input type="button" class="btn btn-dark mt-2" onclick="insert('4')"  id="numbers" value="4">
+                    <input type="button" class="btn btn-dark mt-2" onclick="insert('5')"  id="numbers" value="5">
+                    <input type="button" class="btn btn-dark mt-2" onclick="insert('6')"  id="numbers" value="6">
+                    <input type="button" class="btn btn-dark mt-2" onclick="insert('-')" value="-">
+                </div>
+
+                <div class="d-flex justify-content-between mt-2">
+                    <input type="button" class="btn btn-dark mt-2" onclick="insert('1')"  id="numbers" value="1">
+                    <input type="button" class="btn btn-dark mt-2" onclick="insert('2')"  id="numbers" value="2">
+                    <input type="button" class="btn btn-dark mt-2" onclick="insert('3')"  id="numbers" value="3">
+                    <input type="button" class="btn btn-dark mt-2" onclick="insert('+')" value="+">
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <input type="button" class="btn btn-dark mt-2" onclick="insert('0')"  id="numbers" value="0">
+                    <input type="button" class="btn btn-dark mt-2" onclick="insert('.')" id="numbers" value=".">
+                    <input type="button" id="equal" class="btn btn-dark mt-2 i" onclick="equall('=')" value="=">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function insert(num) {
+            display.innerText += num;
+        }
+        function equall() {
+            answer.innerText = eval(display.innerText);
+        }
+        function clears() {
+            display.innerText = " ";
+            answer.innerText = " ";
+        }
+        function del() {
+            a = display.innerText;
+            b = a.substring(0, a.length - 1);
+            display.innerText = b;
+        }
+    </script>
+</body>
+
+</html>
